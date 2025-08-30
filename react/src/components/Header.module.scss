@@ -1,0 +1,103 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(30,41,59,0.06);
+  border-radius: 0 0 18px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+  filter: drop-shadow(0 2px 8px #38bdf8aa);
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.siteName {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #2563eb;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #38bdf8 60%, #2563eb 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.navLink {
+  position: relative;
+  font-size: 1.07rem;
+  color: #334155;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.2s;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 2.5px;
+    width: 0;
+    background: linear-gradient(90deg, #2563eb 60%, #38bdf8 100%);
+    border-radius: 2px;
+    transition: width 0.25s;
+    margin-top: 3px;
+  }
+
+  &:hover,
+  &:focus {
+    color: #2563eb;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    width: 100%;
+  }
+}
+
+.active {
+  color: #2563eb;
+
+  &::after {
+    width: 100%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 10px;
+  }
+  .nav {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .siteName {
+    font-size: 1.1rem;
+  }
+}

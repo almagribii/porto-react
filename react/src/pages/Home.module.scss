@@ -1,0 +1,62 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.homeContainer {
+  background: #f8fafc;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.mainContent {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(30,41,59,0.10);
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sectionProjects {
+  margin-top: 48px;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-bottom: 32px;
+}
+
+.viewMoreButton {
+  display: inline-block;
+  background: linear-gradient(90deg, #2563eb 60%, #38bdf8 100%);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+
+  &:hover {
+    background: linear-gradient(90deg, #1e40af 60%, #0ea5e9 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(30,41,59,0.13);
+  }
+}
+
+h2 {
+  color: #1e293b;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+}

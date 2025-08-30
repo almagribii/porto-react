@@ -1,32 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import styles from "./Header.module.scss";
 
-function Header() {
-  return (
-    <header
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "1rem",
-        backgroundColor: "#282c34",
-        color: "white",
-      }}
-    >
-      <Link
-        to="/"
-        style={{ color: "white", textDecoration: "none", fontSize: "1.5rem" }}
-      >
-        Brucad Al Magribi
-      </Link>
-      <nav>
-        <Link to="/about" style = {{ color: "white", marginRight: "1rem", textDecoration: "none" }}>About</Link>
-        <Link to="/skills" style = {{ color: "white", marginRight: "1rem", textDecoration: "none" }}>Skiills</Link>
-        <Link to="/projects" style = {{ color: "white", marginRight: "1rem", textDecoration: "none" }}>Projects</Link>
-        <Link to="/blog" style = {{ color: "white", marginRight: "1rem", textDecoration: "none" }}>Blog</Link>
-        <Link to="/contact" style = {{ color: "white", textDecoration: "none" }}>Contact</Link>
-        </nav>
-    </header>
-  );
-}
+const navLinks = [
+  { to: "/", label: "Beranda" },
+  { to: "/about", label: "Tentang" },
+  { to: "/skills", label: "Keahlian" },
+  { to: "/projects", label: "Proyek" },
+  { to: "/blog", label: "Blog" },
+  { to: "/contact", label: "Kontak" },
+];
+
+const Header: React.FC = () => (
+  <header className={styles.header}>
+    <div className={styles.logoArea}>
+      <img src="/assets/react.svg" alt="Logo" className={styles.logo} />
+      <span className={styles.siteName}>Portofolio</span>
+    </div>
+    <nav className={styles.nav}>
+      {navLinks.map((link) => (
+        <NavLink
+          key={link.to}
+          to={link.to}
+          className={({ isActive }) =>
+            isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+          }
+          end={link.to === "/"}
+        >
+          {link.label}
+        </NavLink>
+      ))}
+    </nav>
+  </header>
+);
 
 export default Header;

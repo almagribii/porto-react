@@ -1,0 +1,112 @@
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 0 32px 0;
+  background: linear-gradient(90deg, #e0e7ef 60%, #f8fafc 100%);
+  border-radius: 18px;
+  margin-bottom: 32px;
+  animation: fadeInHero 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.heroContent {
+  text-align: center;
+  max-width: 600px;
+}
+
+.heroLogo {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 2px 8px #38bdf8aa);
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 14px 0;
+  color: #1e293b;
+  letter-spacing: -1px;
+}
+
+.highlight {
+  color: #2563eb;
+  background: linear-gradient(90deg, #38bdf8 60%, #2563eb 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: #334155;
+  margin-bottom: 28px;
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #38bdf8 60%, #2563eb 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.heroActions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.ctaButton {
+  background: linear-gradient(90deg, #2563eb 60%, #38bdf8 100%);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.13);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+
+  &:hover, &:focus {
+    background: linear-gradient(90deg, #1e40af 60%, #0ea5e9 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(30,41,59,0.13);
+  }
+}
+
+.secondaryButton {
+  background: #fff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+  &:hover, &:focus {
+    background: #2563eb;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+  }
+}

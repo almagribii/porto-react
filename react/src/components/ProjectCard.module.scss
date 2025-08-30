@@ -1,0 +1,130 @@
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.card {
+  background: #f1f5f9;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(30,41,59,0.08);
+  padding: 24px 20px 20px 20px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  min-height: 240px;
+  animation: cardAppear 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  outline: none;
+
+  &:hover, &:focus {
+    box-shadow: 0 8px 32px rgba(30,41,59,0.18);
+    transform: translateY(-6px) scale(1.03);
+    cursor: pointer;
+  }
+}
+
+.imageWrapper {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 6px rgba(30,41,59,0.07);
+
+  img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s;
+  }
+
+  .card:hover & img, .card:focus & img {
+    transform: rotate(-8deg) scale(1.1);
+  }
+}
+
+.title {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.description {
+  margin: 0 0 14px 0;
+  color: #334155;
+  font-size: 1rem;
+}
+
+.techList {
+  margin-bottom: 16px;
+}
+
+.techBadge {
+  display: inline-block;
+  background: #e0e7ef;
+  color: #2563eb;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  margin-right: 7px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: #2563eb;
+    color: #fff;
+  }
+}
+
+.cardActions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.demoButton,
+.githubButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border-radius: 7px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  border: none;
+  outline: none;
+}
+
+.demoButton {
+  background: linear-gradient(90deg, #38bdf8 60%, #2563eb 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.13);
+
+  &:hover, &:focus {
+    background: linear-gradient(90deg, #0ea5e9 60%, #1e40af 100%);
+    box-shadow: 0 4px 16px rgba(37,99,235,0.18);
+  }
+}
+
+.githubButton {
+  background: #fff;
+  color: #2563eb;
+  border: 1.5px solid #2563eb;
+
+  &:hover, &:focus {
+    background: #2563eb;
+    color: #fff;
+  }
+}

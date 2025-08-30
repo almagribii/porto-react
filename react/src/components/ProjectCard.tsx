@@ -1,68 +1,65 @@
 import React from "react";
+import styles from "./ProjectCard.module.scss";
 
-interface ProjectCardProps {
-  project: {
-    id: number;
-    name: string;
-    description: string;
-    imageUrl: string;
-    technologies: string[];
-    githubUrl: string;
-    liveUrl: string;
-  };
-}
+type Project = {
+  id: number;
+  name: string;
+  description: string;
+  imageUrl: string;
+  technologies: string[];
+  githubUrl: string;
+  liveUrl: string;
+};
 
-function ProjectCard({ project }: ProjectCardProps) {
-    return (
-      <div
-        style={{
-          border: "1px solid #ccc",
-          borderRadius: "8px",
-          padding: "1rem",
-          boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-        }}
+type ProjectCardProps = {
+  project: Project;
+};
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
+  <div className={styles.card} tabIndex={0} aria-label={project.name}>
+    <div className={styles.imageWrapper}>
+      <img src={project.imageUrl} alt={project.name} loading="lazy" />
+    </div>
+    <h3 className={styles.title}>{project.name}</h3>
+    <p className={styles.description}>{project.description}</p>
+    <div className={styles.techList}>
+      {project.technologies.map((tech) => (
+        <span key={tech} className={styles.techBadge}>
+          {tech}
+        </span>
+      ))}
+    </div>
+    <div className={styles.cardActions}>
+      <a
+        href={project.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.demoButton}
+        aria-label={`Demo ${project.name}`}
       >
-        <img
-          src={project.imageUrl}
-          alt={project.name}
-          style={{ width: "100%", height: "auto", borderRadius: "4px" }}
-        />
-        <h3>{project.name}</h3>
-        <p>{project.description}</p>
-        <div>
-          <strong>Teknologi:</strong>
-          {project.technologies.map((tech) => (
-            <span
-              key={tech}
-              style={{
-                display: "inline-block",
-                backgroundColor: "#f0f0f0",
-                padding: "0.25rem 0.5rem",
-                borderRadius: "4px",
-                margin: "0.25rem",
-              }}
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-        <div style={{ marginTop: "1rem" }}>
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ marginRight: "1rem" }}
-          >
-            GitHub
-          </a>
-          {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              Live Demo
-            </a>
-          )}
-        </div>
-      </div>
-    );                                                                                                                                                                                            
-}
+        🚀 Demo
+      </a>
+      <a
+        href={project.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.githubButton}
+        aria-label={`GitHub ${project.name}`}
+      >
+        <svg
+          width="18"
+          height="18"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          style={{ verticalAlign: "middle", marginRight: 4 }}
+          aria-hidden="true"
+        >
+          <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.578.688.48C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" />
+        </svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+);
 
 export default ProjectCard;

@@ -1,3 +1,5 @@
+
+
 {
   "about": {
     "title": "Tentang Saya",
@@ -26,7 +28,7 @@
       "id": 1,
       "name": "Nama Proyek 1",
       "description": "Deskripsi singkat tentang proyek ini. Jelaskan teknologi yang digunakan dan masalah apa yang diselesaikan.",
-      "imageUrl": "/assets/project1.jpg",
+      "imageUrl": "vite.svg",
       "technologies": ["React", "TypeScript", "Node.js"],
       "githubUrl": "https://github.com/namauser/proyek1",
       "liveUrl": "https://proyek1.com"
