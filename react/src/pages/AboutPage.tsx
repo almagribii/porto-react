@@ -1,6 +1,7 @@
 import React from "react";
 import portfolioData from "../data/portfolioData.json";
 import SocialIcons from "../components/SocialIcons";
+import photo from '../assets/react.svg'; 
 
 function AboutPage() {
     const { about, contact } = portfolioData;
@@ -8,7 +9,7 @@ function AboutPage() {
     return (
       <div style={{ padding: "2rem", textAlign: "center" }}>
         <img
-          src={about.photoUrl}
+          src={photo}
           alt="Foto Profil"
           style={{ width: "150px", height: "150px", borderRadius: "50%" }}
         />
