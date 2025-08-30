@@ -12,7 +12,6 @@ function Home() {
         padding: "0",
       }}
     >
-      <Header />
 
       <div
         style={{
@@ -27,7 +26,6 @@ function Home() {
         </main>
       </div>
 
-      <Footer />
     </div>
   );
 }
