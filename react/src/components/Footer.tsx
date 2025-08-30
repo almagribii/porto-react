@@ -2,16 +2,13 @@ function Footer() {
   return (
     <footer
       style={{
+        padding: "1rem",
         backgroundColor: "#282c34",
         color: "white",
-        padding: "1rem",
         textAlign: "center",
-        position: "fixed",
-        bottom: "0",
-        width: "100%",
       }}
     >
-        <p>&copy; 2025 Website Saya</p>
+      <p>&copy; 2025 Brucad Al Magribi. Semua hak cipta dilindungi.</p>
     </footer>
   );
 }

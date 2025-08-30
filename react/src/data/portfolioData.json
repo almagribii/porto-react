@@ -1,0 +1,60 @@
+{
+  "about": {
+    "title": "Tentang Saya",
+    "bio": "Halo! Saya Brucad, seorang software engineer dengan pengalaman selama [Jumlah Tahun] tahun di bidang [Sebutkan Spesialisasi]. Saya berfokus pada [Sebutkan Fokus Anda].",
+    "photoUrl": "/assets/profile.jpg"
+  },
+  "skills": [
+    {
+      "name": "JavaScript",
+      "icon": "fab fa-js-square",
+      "level": "Mahir"
+    },
+    {
+      "name": "React",
+      "icon": "fab fa-react",
+      "level": "Mahir"
+    },
+    {
+      "name": "Node.js",
+      "icon": "fab fa-node-js",
+      "level": "Menengah"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Nama Proyek 1",
+      "description": "Deskripsi singkat tentang proyek ini. Jelaskan teknologi yang digunakan dan masalah apa yang diselesaikan.",
+      "imageUrl": "/assets/project1.jpg",
+      "technologies": ["React", "TypeScript", "Node.js"],
+      "githubUrl": "https://github.com/namauser/proyek1",
+      "liveUrl": "https://proyek1.com"
+    },
+    {
+      "id": 2,
+      "name": "Nama Proyek 2",
+      "description": "Proyek ini adalah tentang [deskripsi lainnya].",
+      "imageUrl": "/assets/project2.jpg",
+      "technologies": ["React Native", "Firebase"],
+      "githubUrl": "https://github.com/namauser/proyek2",
+      "liveUrl": ""
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "Judul Artikel Pertama",
+      "summary": "Ringkasan singkat tentang isi artikel. Ini akan muncul di halaman blog.",
+      "date": "2025-08-30",
+      "slug": "judul-artikel-pertama"
+    }
+  ],
+  "contact": {
+    "email": "nama@email.com",
+    "phone": "+62 812 3456 7890",
+    "linkedin": "https://www.linkedin.com/in/namauser",
+    "github": "https://github.com/namauser",
+    "twitter": "https://twitter.com/namauser"
+  }
+}

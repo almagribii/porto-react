@@ -1,4 +1,4 @@
-import Home from './pages/Home.tsx'
+import Home from './pages/HomePage.tsx'
 
 function Root() {
 
