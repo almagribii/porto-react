@@ -1,0 +1,27 @@
+:root {
+  --bg: #f8fafc;
+  --text: #222;
+  --card: #f1f5f9;
+  --card-inner: #fff;
+  --card-shadow: 0 2px 12px rgba(30,41,59,0.08);
+  --card-shadow-hover: 0 8px 32px rgba(30,41,59,0.18);
+  --badge-bg: #e0e7ef;
+  --badge-text: #2563eb;
+}
+
+.dark {
+  --bg: #18181b;
+  --text: #f1f5f9;
+  --card: #23232b;
+  --card-inner: #18181b;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  --card-shadow-hover: 0 8px 32px rgba(0,0,0,0.45);
+  --badge-bg: #334155;
+  --badge-text: #38bdf8;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}

@@ -10,20 +10,21 @@
 }
 
 .card {
-  background: #f1f5f9;
+  background: var(--card);
   border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(30,41,59,0.08);
+  box-shadow: var(--card-shadow);
   padding: 24px 20px 20px 20px;
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.3s;
   min-height: 240px;
   animation: cardAppear 0.7s cubic-bezier(0.23, 1, 0.32, 1);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   outline: none;
+  color: var(--text);
 
   &:hover, &:focus {
-    box-shadow: 0 8px 32px rgba(30,41,59,0.18);
+    box-shadow: var(--card-shadow-hover);
     transform: translateY(-6px) scale(1.03);
     cursor: pointer;
   }
@@ -36,7 +37,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background: var(--card-inner);
   border-radius: 50%;
   box-shadow: 0 1px 6px rgba(30,41,59,0.07);
 
@@ -60,7 +61,7 @@
 
 .description {
   margin: 0 0 14px 0;
-  color: #334155;
+  color: var(--text);
   font-size: 1rem;
 }
 
@@ -70,8 +71,8 @@
 
 .techBadge {
   display: inline-block;
-  background: #e0e7ef;
-  color: #2563eb;
+  background: var(--badge-bg);
+  color: var(--badge-text);
   border-radius: 6px;
   padding: 4px 12px;
   font-size: 0.85em;
@@ -119,7 +120,7 @@
 }
 
 .githubButton {
-  background: #fff;
+  background: var(--card-inner);
   color: #2563eb;
   border: 1.5px solid #2563eb;
 
